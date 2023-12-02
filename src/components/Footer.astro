@@ -1,17 +1,9 @@
 ---
-import Social from './Social.astro';
+import SnsLinks from './SnsLinks.astro';
 ---
 
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="py-10 bg-gray-400">
+  <div class="max-w-7xl flex justify-center">
+    <SnsLinks />
+  </div>
 </footer>
-
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>

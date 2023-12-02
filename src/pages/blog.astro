@@ -5,10 +5,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 
 const allPosts = await getCollection('posts');
-const pageTitle = "私のAstro学習ブログ";
+const pageTitle = "My Astro Leaning Blog";
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<ul>
-		{allPosts.map((post) => (<BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />))}
+	<p class="mt-2">This is where I will post about my journey learning Astro.</p>
+	<ul class="my-10 grid grid-cols-3 gap-6">
+		{allPosts.map((post) => (
+			<BlogPost
+				url={`/posts/${post.slug}`}
+				postData={post.data}
+			/>
+		))}
 	</ul>
 </BaseLayout>

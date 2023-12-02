@@ -1,12 +1,13 @@
 ---
-import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
-import ThemeIcon from '../components/ThemeIcon.astro';
+import SnsLinks from './SnsLinks.astro';
 ---
 <header>
-  <nav>
-    <Hamburger />
-    <ThemeIcon />
+  <nav class="py-8 flex justify-between items-center">
+    <a href="/">
+      <img src="/astro-logo-dark1.svg" alt="Astro logo"/>
+    </a>
     <Navigation />
+    <SnsLinks
   </nav>
 </header>

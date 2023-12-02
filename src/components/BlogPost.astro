@@ -1,4 +1,17 @@
 ---
-const { title, url  } = Astro.props;
+const { url, postData } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+<li class="bg-white rounded-lg transition-all ease-out hover:shadow-lg">
+  <a
+    href={url}
+    class="p-4 block group"
+  >
+    <img
+      src={postData.image.url}
+      class="w-full h-[160px] object-cover rounded-lg"
+    >
+    <p class="mt-2 text-xs text-gray-500">{postData.pubDate.toLocaleDateString()}</p>
+    <h2 class="text-xl font-bold transition-all ease-out group-hover:text-purple-600">{postData.title}</h2>
+    <p class="mt-2 text-sm text-right">{postData.author}</p>
+  </a>
+</li>
